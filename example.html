@@ -1,0 +1,146 @@
+<button>OK</button>
+<script>
+    //Template literals
+
+    // let firstName = "A";
+    // let lastName = "B";
+    // let year = 1990;
+
+    // function getAge(year) {
+    //     let date = new Date();// создали объект класса
+    //     return date.getFullYear() - year;
+    // }
+
+    // // const FIO =firstName+" "+lastName+" "
+    // const FIO = `${firstName} ${lastName}, рожденный в ${year} году , ему ${getAge(year)} лет\n`;
+
+
+
+    // console.log(FIO.indexOf("9"));
+    // console.log(FIO.endsWith('лет'));
+    // console.log(FIO.repeat(5));
+
+    //Стрелочные функции
+
+    // const sum = (a, b = 1) => {
+    //     a = +a;
+    //     if (!isNaN(a)) {
+    //         console.log(a + b);
+    //     }
+    //     else {
+    //         console.log("String");
+    //     }
+    // };
+
+    // sum('hj');
+    //alert(sum(1,2));
+
+    //Методв массивов
+
+
+
+    //var langs = ["JS", "C++", "Python", "C#"];
+
+    // // langs.forEach((item, i) => console.log(`${i + 1}) ${item}`));
+
+    // //let langsWidthLengthMoreTwo = langs.filter(item => item.length > 2);
+    // // langs.filter(item => item.length > 2).forEach((item, i) => console.log(`${i + 1}) ${item}`));
+
+
+
+    // let langsWidthLengthMoreTwo = langs.find(item => item.length > 2);// возвращает первый найденный элемент
+
+    // console.log(langsWidthLengthMoreTwo);
+
+
+    // Метод map применяет функцию к каждому элементу массива и возвращает результат данной функции, присваева его к текущему элементу нового массива
+
+
+    // let langthLangs = langs.map(item => item.length);
+    // console.log(langthLangs);
+
+
+    // let tCelsia = [23, 12, 32, 20];
+    // let tFarengeit = tCelsia.map(item => parseInt((4 / 5) * item + 32));
+    // console.log(tFarengeit);
+
+    // const box = {
+    //     color: 'green',
+    //     position: 10,
+    //     clickMe: function () {
+    //         document.querySelector('button').onclick = function () {
+    //             console.log(this);
+    //             console.log(`Имеет цвет ${this.color} и позицию ${this.position}`);
+
+    //         }
+    //     }
+    // }
+
+    // box.clickMe();
+
+    // const box = {
+    //     color: 'green',
+    //     position: 10,
+    //     clickMe: function () {
+    //         document.querySelector('button').onclick = e => {
+    //             e.target.style.color = 'green';
+    //             console.log(e.target);
+    //             console.log(`Имеет цвет ${this.color} и позицию ${this.position}`);
+
+    //         }
+    //     }
+    // }
+    // //Стрелочные функции используют this родителя , у них нет своего
+
+    // box.clickMe();
+
+    //Деструктуризация - механизм пкоторый позвалчет извлечь части из составных данных
+
+    // let mas = ['Ivan', 20];
+    // // let name=mas[0];
+    // // let age=mas[1];
+
+    // let [name, age] = mas;
+
+
+    // let obj = {
+    //     firstName: 'Ivan',
+    //     lastName: 'Ivanov',
+    //     professions: ["Programmer", "Admin"]
+    // }
+
+    // let { name: firstName, lastName, professions } = obj;
+    // alert(name);
+
+
+    // let info = year => {
+    //     let age = new Date().getFullYear() - year;
+    //     return [age, 65 - age];
+    // }
+
+    // let [age, leftWork] = info(1990);
+    // alert(leftWork);
+
+
+    //Операторы REST и SPREAD
+    //REAST- это упаковка элементов в масив
+    // SPREAD- это распаковка массива в отедельные элементы
+
+    // function testRest(a, ...c) {
+    //     console.log(c);
+    // }
+
+    // testRest(1, 2, 3, 4, 5, 6, 7);
+
+    // const items = [23, 3, 45, 34, 65, 97];
+    // alert(Math.max(...items));// Spread- распаковка массива
+
+
+    //Клонирование свойств массива
+
+    // let arr1 = ['one', 'two'];
+    // let arr2 = ['first', ...arr1, 'second'];
+    // console.log(arr2);
+
+
+</script>
