@@ -1,0 +1,37 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.products{
+    display: grid;
+    justify-content: space-around;
+    grid-template-columns: 40% 40%;
+    gap: 20px;
+}
+.product-item{
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding-top: 10px;
+    width: 100%;
+    height: 390px;
+}
+
+.btn-cart{
+
+    background-color: white;
+    border: 1ps solid black;
+    padding: 5px;
+    color: black;
+    transition: 0.3s;
+    margin: 20px;
+}
+.btn-cart:hover{
+   
+        transform: scale(1.13);
+
+}
