@@ -4,8 +4,18 @@
     box-sizing: border-box;
 }
 
+.header{
+    width: 1140px;
+    background-color: lightgrey;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 55px ;
+}
 
 .products{
+    width: 1140px;      
     display: grid;
     justify-content: space-around;
     grid-template-columns: 40% 40%;
