@@ -16,7 +16,6 @@ const renderProduct = (products) => {
 };
 const renderPage = list => {
     const productsList = list.map(item => renderProduct(item));
-    console.log(productsList);
     let productsListNew = '';
     for (item of productsList) {
         productsListNew += item;
