@@ -29,15 +29,33 @@
         // }
 
 
-        info() {
+        _info() {
             return `Пользователь ${this.name} родился в ${this.year} году`;
         }
     }
 
-    let man1 = new Person('Иван', 1990);
-    let man2 = new Person('Петр', 1992);
 
-    Person.compareAge(man1, man2)
+    class Teacher extends Person {
+        //Если класс наседуется от класса в котором есть конструкор с параметрами , 
+        //то мы длжны создавтаь конструктор в потомке класса и выззывать базовый кончтпуктор через super
+
+        constructor(name, year, subject) {
+            super(name, year);
+            this.subject = subject;
+
+        }
+        info() {
+            console.log(`${super._info()} он преподавет прдмет ${this.subject}`)
+        }
+
+    }
+
+    let teacher = new Teacher("Алексей", 1990, "Физика");
+    teacher.info();
+    // let man1 = new Person('Иван', 1990);
+    // let man2 = new Person('Петр', 1992);
+
+    // Person.compareAge(man1, man2)
 
   //  man1.compareAge(man2);
    // alert(man1.info());
