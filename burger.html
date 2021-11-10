@@ -1,0 +1,96 @@
+<script>
+    class Hamburger {
+        constructor(size, stuffing, topping) {
+            this.size = size;
+            this.stuffing = stuffing;
+
+
+        }
+
+        calculatePrice() {
+
+            let price = this.size == a ? price = 50 : 100;
+
+            if (this.stuffing == a) {
+                price += 10;
+            } if (this.stuffing == b) {
+                price += 20;
+            } else {
+                price += 15;
+            }
+
+            if (this.topping == a) {
+                price += 15;
+            } else if (this.topping == b) {
+                price += 20;
+            }
+
+        }
+        calculatePrice() {
+
+            return this.size == a ? price = 50 : 100;
+
+        }
+
+    }
+</script>
+
+
+<form action="" id=hamburger-form>
+    <fieldset class="hamburger-fieldset">
+        <h2>Выберете размер гамбургера</h2>
+        <div>
+            <input type="radio" name="size" id="big" value="Big" calss='hamburger-input' data-price="100"
+                data-calories="40" checked>
+            <label for="big">Большой-100р, 40калорий</label>
+        </div>
+        </div>
+        <div>
+            <input type="radio" name="size" id="small" value="Small" calss='hamburger-input' data-price="50"
+                data-calories="20">
+            <label for="small">Маленький- 50р, 20калорий</label>
+        </div>
+
+    </fieldset>
+    <fieldset class="hamburger-fieldset">
+        <h2>Выберете начинку гамбургера</h2>
+        <div>
+            <input type="radio" name="stuffing" id="cheese" value="Cheese" calss='hamburger-input' data-price="10"
+                data-calories="20" checked>
+            <label for="big">Сыр-10р, 20 калорий</label>
+        </div>
+        <div>
+            <input type="radio" name="stuffing" id="salad" value="Salad" calss='hamburger-input' data-price="20"
+                data-calories="5">
+            <label for="small">Салат- 20р, 5 калорий</label>
+        </div>
+        <div>
+            <input type="radio" name="stuffing" id="potato" value="Potato" calss='hamburger-input' data-price="15"
+                data-calories="10">
+            <label for="small">Картошка- 15р, 10 калорий</label>
+        </div>
+    </fieldset>
+    <fieldset class="hamburger-fieldset">
+        <h2>Выберете доп. ингредиенты </h2>
+        <div>
+            <input type="checkbox" name="toppings" id="spice" value="Spice" calss='hamburger-input' data-price="15"
+                data-calories="0">
+            <label for="small">Посыпать приправой- 15р, 0 калорий</label>
+        </div>
+        <div>
+            <input type="checkbox" name="toppings" id="mayo" value="Mayo" calss='hamburger-input' data-price="20"
+                data-calories="5">
+            <label for="small">Полить майонезом- 20р, 5 калорий</label>
+        </div>
+    </fieldset>
+    <div class="check">
+        <button>Расчитать</button>
+
+    </div>
+</form>
+<style>
+    .hamburger-fieldset {
+        display: flex;
+        flex-direction: column;
+    }
+</style>
