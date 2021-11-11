@@ -1,41 +1,3 @@
-<script>
-    class Hamburger {
-        constructor(size, stuffing, topping) {
-            this.size = size;
-            this.stuffing = stuffing;
-
-
-        }
-
-        calculatePrice() {
-
-            let price = this.size == a ? price = 50 : 100;
-
-            if (this.stuffing == a) {
-                price += 10;
-            } if (this.stuffing == b) {
-                price += 20;
-            } else {
-                price += 15;
-            }
-
-            if (this.topping == a) {
-                price += 15;
-            } else if (this.topping == b) {
-                price += 20;
-            }
-
-        }
-        calculatePrice() {
-
-            return this.size == a ? price = 50 : 100;
-
-        }
-
-    }
-</script>
-
-
 <form action="" id=hamburger-form>
     <fieldset class="hamburger-fieldset">
         <h2>Выберете размер гамбургера</h2>
@@ -94,3 +56,24 @@
         flex-direction: column;
     }
 </style>
+
+<script>
+    window.onload = () => {
+
+        document.querySelector("check").addEventListener('click', () => {
+            let burger = new Hamburger('size', 'stuffing', 'toppings');
+            console.log(burger);
+        })
+    }
+
+    class Hamburger {
+        constructor(size, stuffing, toppings) {
+            this.size = new Param(this._select(size));
+            this.size = new Param(this._select(size));
+            this.size = new Param(this._get(size));
+        }
+
+    }
+
+
+</script>
