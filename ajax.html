@@ -1,0 +1,7 @@
+<script>
+    fetch('https://www.cbr-xml-daily.ru/daily_json.js')//функция которая выполняет запрос к серверу по указоному адресу и возвращает promis
+        .then(text => text.json())//text это исходник нашего ресурса, json- это метод который преобразует строку json в объект js и вернет promis
+        .then(data => {//объект js полученнный после парсинга строки json
+            console.log(data.Valute.USD.Value);
+        })
+</script>

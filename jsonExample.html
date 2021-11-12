@@ -1,24 +1,79 @@
 <script>
-    let userJson = '{"name":"Ivan","age":25,"isAdmin":"true"}';
-    let user = JSON.parse(userJson);
-    console.log(user);
-    user.date = '2021-11-10';
-    user.adress = {
-        city: "Kazan",
-        index: "420002"
-    }
-    // Преобразование объекта js в строку json
-    let user2 = JSON.stringify(user, null, 4);
-    console.log(user2);
+    // let userJson = '{"name":"Ivan","age":25,"isAdmin":"true"}';
+    // let user = JSON.parse(userJson);
+    // console.log(user);
+    // user.date = '2021-11-10';
+    // user.adress = {
+    //     city: "Kazan",
+    //     index: "420002"
+    // }
+    // // Преобразование объекта js в строку json
+    // let user2 = JSON.stringify(user, null, 4);
+    // console.log(user2);
 
-    //Преобразование строки в объект с переопределением значения из одного из свойсьв
+    // //Преобразование строки в объект с переопределением значения из одного из свойсьв
 
-    let user3 = JSON.parse(user2, (key, value) => {
-        if (key == 'date') {
-            value = new Date(value);
-        }
-        return value;
-    });
+    // let user3 = JSON.parse(user2, (key, value) => {
+    //     if (key == 'date') {
+    //         value = new Date(value);
+    //     }
+    //     return value;
+    // });
 
-    console.log(user3);
+    // console.log(user3);
+
+
+
+    ///Ассинхронность
+
+    // const async = a => {
+    //     setTimeout(() => {
+    //         const b = a + 1;
+    //         return b
+    //     }, 4000);
+    //     return 5000;
+    // }
+
+    // async(5);
+    // console.log(async(5));
+
+    //Callback функция- это функция , котрую в определенный момент запускает др функция 
+
+
+    // const async = (a, cb) => {
+    //     setTimeout(() => {
+    //         const b = a + 1;
+    //         cb(b);
+    //     }, 4000);
+    //     return 5000;
+    // }
+
+    // async(5);
+    // console.log(async(5, x => {
+    //     console.log(x);
+    // }));
+
+    //Промис-это объект , в котором есть свойство resolve и reject  и эти свойства назаначаются с учетом исполнения асинхронности
+
+    // let num = a => 
+    //     return new Promise((resolve, reject) => {
+    //         setTimeout(() => {
+    //             if (a) {
+    //                 resolve(a + 10);//послк resolve Всегда всегда вызывается обработчик then
+    //             } else {
+    //                 reject("Error")//после reject вызывается обработчик catch
+    //             }
+    //         }, 3000)
+    //     })
+    //     return 5000;
+    //     console.log("hj");
+    // };
+    // num(5)
+    //     .then(data => {
+    //         console.log(data);
+    //     })
+    //     .catch(error => {
+    //         console.log("Error");
+    //     })
+
 </script>
