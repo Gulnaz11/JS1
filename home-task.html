@@ -1,8 +1,14 @@
 <form action="#">
-    <input class="name" type="text">
-    <input class="number" type="text">
-    <input class="email" type="email">
-    <button class="button">Submit</button>
+    Задание 3:<br>
+    <input class="name" type="text" placeholder="Иван" required>
+    <div class="resultName"></div>
+    <input class="number" type="text" placeholder="+7(000)000-0000" required>
+    <div class="resultPhone"></div>
+    <input class="text" placeholder="ivan@mail.ru" type="email" required>
+    <div class="resultEmail"></div>
+    <input type="text" placeholder="Hello,my name is Ivan!" required>
+    <button class="button" type="submit">Submit</button>
+
 </form>
 
 <script>
@@ -24,20 +30,52 @@ Two: 'I'll see you next time.'
 One: 'Sure. Bye.'`;
 
 
-    console.log("ДЗ 1: \n" + text.replace(/'/g, `"`));
+    console.log("Задание 1: \n" + text.replace(/'/g, `"`));
 
     let text2 = text.replace(/'/g, `"`);
-    console.log("ДЗ 2: \n" + text2.replace(/\b"/g, `'`));
+    console.log("Задание 2: \n" + text2.replace(/\b"/g, `'`));
 
 
-    let roolForName = /^[а-яA-Z]$/i;
+
+    //Оставила пустое правило, так как отправка формы не будет разрешена при пустых полях
+    let roolForName = /^$|^[a-z]|[А-Я]$/i;
+    let roolForPhone = /^$|^\+7\(+[0-9]{3}\)[0-9]{3}-[0-9]{4}$/;
+    let roolForEmail = /^$|^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,4}$/;
+
 
     document.getElementsByClassName("button")[0].addEventListener('click', () => {
         if (!roolForName.test(document.getElementsByClassName("name")[0].value)) {
             document.getElementsByClassName("name")[0].className += " error";
-            document.querySelector("form").textContent = "Не правильно введено имя пользователя";
+            document.getElementsByClassName("resultName")[0].innerHTML = "Не правильно введено имя пользователя!!!";
+
+        } else {
+            document.getElementsByClassName("name")[0].className = "name";
+            document.getElementsByClassName("resultName")[0].innerHTML = "";
+
+
         };
-        //document.querySelector("name").nodeType
+
+
+        if (!roolForPhone.test(document.getElementsByClassName("number")[0].value)) {
+            document.getElementsByClassName("number")[0].className += " error";
+            document.getElementsByClassName("resultPhone")[0].innerHTML = "Не правильно введен номер телефона!!!";
+
+            //document.querySelector("name").nodeType
+        } else {
+            document.getElementsByClassName("number")[0].className = "number";
+            document.getElementsByClassName("resultPhone")[0].innerHTML = "";
+
+        }
+        if (!roolForEmail.test(document.getElementsByClassName("email")[0].value)) {
+            document.getElementsByClassName("email")[0].className += " error";
+            document.getElementsByClassName("resultEmail")[0].innerHTML = "Не правильно введена электронная почта!!!";
+
+            //document.querySelector("name").nodeType
+        } else {
+            document.getElementsByClassName("email")[0].className = "email";
+            document.getElementsByClassName("resultEmail")[0].innerHTML = "";
+
+        }
     })
 
 
