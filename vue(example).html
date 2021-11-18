@@ -1,0 +1,82 @@
+<div id="app">
+    <div v-for="item of products">
+        <p>{{item.title}}</p>
+        <p>Цена: {{item.price}}</p>
+        <img :src="item.img" :alt="item.title">
+        <button @click="addProduct(item)">Buy</button>
+        <hr>
+    </div>
+    <h1>Привет,{{name}}</h1>
+    <h1>{{sayHellow()}}</h1>
+    <a :href="link">Гугл</a>
+    <!-- <button v-on:click="counter++">OK</button> -->
+    <button @click="increase(forCounter)">OK</button>
+    <span>{{counter}}</span>
+    <hr>
+    <div v-show="show">
+        <h2 v-if="show">Visible.</h2>
+        <h2 v-else="show">Invisible.</h2>
+    </div>
+    <button @click="show=!show">SHOW</button>
+
+    <p>{{counter>10?'Больше 10':'Меньше или равно 10'}}</p>
+    <p @mousemove="getCoordinates()">Some long text {{x}} / {{y}}
+        <span @mousemove.stop>Текст, который не реаширует на движение мышкой</span>
+    </p>
+    <input type="text" v-model.lazy="name">
+    <div v-html="completeEl"></div>
+
+</div>
+<script src="vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: {
+            name: "Иван",
+            link: 'http://google.com',
+            counter: 0,
+            forCounter: 2,
+            show: true,
+            x: 0,
+            y: 0,
+            completeEl: '<a href="http://google.com"> Google</a>',
+            products: [
+                {
+                    title: "Audi",
+                    price: 1000,
+                    //   quantity: 0,
+                    img: "img/mouse.jpg"
+                },
+                {
+                    title: "Lorem",
+                    price: 1000,
+                    //    quantity: 0,
+                    img: "img/mouse.jpg"
+                },
+                {
+                    title: "Fh",
+                    price: 100,
+                    //   quantity: 0,
+                    img: "img/mouse.jpg"
+                },]
+        },
+        methods: {
+            sayHellow() {
+                return `Добрый день,  ${this.name}`
+            },
+            increase(step) {
+                this.counter += step;
+            },
+            getCoordinates() {
+                this.x = event.clientX;
+                this.y = event.clientY;
+            },
+            addProduct(item) {
+                let obj = Object.assign(item, { quantity: 1 });
+                console.log(obj);
+                //  alert(`Вы купили товар ${item.title}  колличество: ${item.quantity} шт`)
+            }
+
+        }
+    });
+</script>
