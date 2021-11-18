@@ -1,4 +1,5 @@
 
+
 let a = true;
 
 document.querySelector("button").addEventListener('click', () => {
@@ -15,119 +16,162 @@ document.querySelector("button").addEventListener('click', () => {
 
 const API = "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/";
 
-class ProductList {
-    constructor(container = '.products') {
-        this.container = container;
-        this.goods = [];
-        this._fetchProducts()
-            .then(data => {
-                this.goods = data;
-                this.sumAll();
-                this.render();//вывод товаров на страницу
 
-            })
+const app = new Vue({
+    el: '#app',
+    data: {
+        catalogUrl: '/catalogData.json',
+        products: [],
+        filtered: [],
+        imgCatalog: 'img.jpg',
+        userSearch: '',
+        show: false
+    },
+    methods: {
 
-    }
-    _fetchProducts() {
-        return fetch(`${API}catalogData.json`)
-            .then(api => api.json())
-            .catch(error => alert("ERROR"));
-
-    }
-
-    sumAll() {
-        let sum = 0;
-        this.goods.forEach(good => sum += good.price);
-        return sum;
-    }
-
-    render() {
-        const block = document.querySelector(this.container);
-        for (let product of this.goods) {
-            const item = new ProductItem(product);
-            block.insertAdjacentHTML("beforeend", item.render());
-            //           block.innerHTML += item.render();
+        filter(value) {
+            const regexp = new RegExp(value, 'i');
+            this.filtered = this.products.filter(product => regexp.test(product.product_name));
+        },
+        getJson(url) {
+            return fetch(url)
+                .then(result => result.json())
+                .catch(error => {
+                    console.log(error);
+                })
+        },
+        addProduct(product) {
+            console.log(product.id_product);
         }
-    }
-}
-
-class ProductItem {
-    constructor(product) {
-        this.title = product.product_name;
-        this.id = product.id;
-        this.price = product.price;
-        // this.img = product.img;
-    }
-    render() {
-        return `<div class="product-item">
-         <img src="img/img.jpg" alt="img">
-                <h3>${this.title}</h3>
-                <p>${this.price}</p>
-                <button class="buy-btn">Купить</button>
-            </div>`
-    }
-}
-
-
-
-
-let list = new ProductList();
-
-class Cart {
-    constructor(container = '.bascket') {
-        this.container = container;
-        this.goods = [];
-        this._fetchProducts()
+    },
+    mounted() {
+        this.getJson(`${API + this.catalogUrl}`)
             .then(data => {
-                this.goods = data.contents;
-
-                this.render();//вывод товаров на страницу
-                this.sumAll();
+                for (let el of data) {
+                    this.products.push(el);
+                }
+            });
+        this.getJson(`getProducts.json`)
+            .then(data => {
+                for (let el of data) {
+                    this.products.push(el);
+                }
             })
+    }
+})
+// class ProductList {
+//     constructor(container = '.products') {
+//         this.container = container;
+//         this.goods = [];
+//         this._fetchProducts()
+//             .then(data => {
+//                 this.goods = data;
+//                 this.sumAll();
+//                 this.render();//вывод товаров на страницу
 
-    }
-    _fetchProducts() {
-        return fetch(`${API}getBasket.json`)
-            .then(api => api.json())
-            .catch(error => alert("ERROR"));
+//             })
 
-    }
+//     }
+//     _fetchProducts() {
+//         return fetch(`${API}catalogData.json`)
+//             .then(api => api.json())
+//             .catch(error => alert("ERROR"));
 
-    sumAll() {
-        let sum = 0;
-        this.goods.forEach(good => sum += good.price);
-        console.log(sum);
-        document.getElementsByClassName("totalSum")[0].innerHTML = `Итого: ${sum}`;
-    }
+//     }
 
-    render() {
-        const block = document.querySelector(this.container);
-        for (let product of this.goods) {
-            const item = new CartItem(product);
-            block.insertAdjacentHTML("afterbegin", item.render());
-            //           block.innerHTML += item.render();
-        }
-    }
-}
+//     sumAll() {
+//         let sum = 0;
+//         this.goods.forEach(good => sum += good.price);
+//         return sum;
+//     }
 
-class CartItem {
-    constructor(product) {
-        this.title = product.product_name;
-        this.id = product.id;
-        this.price = product.price;
-        this.quantity = product.quantity;
-        // this.img = product.img;
-    }
-    render() {
-        return `<div class="cart-item">
-         <img class="cart-img" src="img/img.jpg" alt="img">
-                <h3>${this.title}</h3>
-                <p>Колличество: ${this.quantity} </p>
-               <p> Цена: ${this.price} </p>
-            </div>`
-    }
-}
-let list2 = new Cart();
+//     render() {
+//         const block = document.querySelector(this.container);
+//         for (let product of this.goods) {
+//             const item = new ProductItem(product);
+//             block.insertAdjacentHTML("beforeend", item.render());
+//             //           block.innerHTML += item.render();
+//         }
+//     }
+// }
+
+// class ProductItem {
+//     constructor(product) {
+//         this.title = product.product_name;
+//         this.id = product.id;
+//         this.price = product.price;
+//         // this.img = product.img;
+//     }
+//     render() {
+//         return `<div class="product-item">
+//          <img src="img/img.jpg" alt="img">
+//                 <h3>${this.title}</h3>
+//                 <p>${this.price}</p>
+//                 <button class="buy-btn">Купить</button>
+//             </div>`
+//     }
+// }
+
+
+
+
+// let list = new ProductList();
+
+// class Cart {
+//     constructor(container = '.bascket') {
+//         this.container = container;
+//         this.goods = [];
+//         this._fetchProducts()
+//             .then(data => {
+//                 this.goods = data.contents;
+
+//                 this.render();//вывод товаров на страницу
+//                 this.sumAll();
+//             })
+
+//     }
+//     _fetchProducts() {
+//         return fetch(`${API}getBasket.json`)
+//             .then(api => api.json())
+//             .catch(error => alert("ERROR"));
+
+//     }
+
+//     sumAll() {
+//         let sum = 0;
+//         this.goods.forEach(good => sum += good.price);
+//         console.log(sum);
+//         document.getElementsByClassName("totalSum")[0].innerHTML = `Итого: ${sum}`;
+//     }
+
+//     render() {
+//         const block = document.querySelector(this.container);
+//         for (let product of this.goods) {
+//             const item = new CartItem(product);
+//             block.insertAdjacentHTML("afterbegin", item.render());
+//             //           block.innerHTML += item.render();
+//         }
+//     }
+// }
+
+// class CartItem {
+//     constructor(product) {
+//         this.title = product.product_name;
+//         this.id = product.id;
+//         this.price = product.price;
+//         this.quantity = product.quantity;
+//         // this.img = product.img;
+//     }
+//     render() {
+//         return `<div class="cart-item">
+//          <img class="cart-img" src="img/img.jpg" alt="img">
+//                 <h3>${this.title}</h3>
+//                 <p>Колличество: ${this.quantity} </p>
+//                <p> Цена: ${this.price} </p>
+//             </div>`
+//     }
+// }
+// let list2 = new Cart();
 
 
 

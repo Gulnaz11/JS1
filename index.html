@@ -6,21 +6,25 @@
     <title>Интернет-магазин</title>
     <link rel="stylesheet" href="style.css">
 </head>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <body>
-    <header class="header">
-        SHOP
-        <button class="btn-cart" type="button">Корзина</button>
-    </header>
-    <section id="cart" class="cart invisible">
-        <div class="bascket">
-            <p class="totalSum">Итого:</p>
-        </div>
-    </section>
-    <main>
-        <div class="products"></div>
-    </main>
-    <script src="js/main.js"></script>
+    <div id="app">
+
+        <header class="header">
+            SHOP
+            <button class="btn-cart" type="button">Корзина</button>
+        </header>
+        <section id="cart" class="cart invisible">
+            <div class="bascket">
+                <p class="totalSum">Итого:</p>
+            </div>
+        </section>
+        <main>
+            <div class="products"></div>
+        </main>
+        <script src="js/main.js"></script>
+    </div>
 </body>
 
 </html>
