@@ -4,19 +4,23 @@
     box-sizing: border-box;
 }
 
-.header{
-    width: 1140px;
-    background-color: lightgrey;
-  
-    display: flex;
-    justify-content: space-between;
+.wrap{
+    width: 1140px; display: flex;
+    justify-content: space-around;
     align-items: center;
-    padding: 0 55px ;
 }
+.header{
+    
+    background-color: lightgrey;
+   
+    padding: 0 5px ;
+}
+
 .cart{
   
     margin-top: 10px;
-    width: 1140px;
+    margin-right: 10px;
+    width: 300px;
     margin-bottom: 20px;
     justify-content: space-between;
     align-items: center;
@@ -68,7 +72,7 @@
     border: 1px solid black;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: flex-end;
     width: 100%;
     padding: 15px;
 }
