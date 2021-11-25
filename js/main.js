@@ -15,7 +15,8 @@ const app = new Vue({
         userSearch: '',
         show: false,
         count: [],
-        c: 0
+        c: 0,
+        error: false
     },
     methods: {
 
@@ -26,20 +27,15 @@ const app = new Vue({
             this.filtered = this.products.filter(product => regexp.test(product.product_name));
             // console.log(this.filtered[0].product_name);   
 
-
-
-
-
         },
         getJson(url) {
             return fetch(url)
                 .then(result => result.json())
                 .catch(error => {
-                    console.log(error);
+                    this.error = true;
                 })
         },
         addProduct(product) {
-
 
             if (!this.cartProducts.includes(Object.assign({ quantity: 1 }, product))) {
                 this.cartProducts.push(Object.assign({ quantity: 1 }, product));

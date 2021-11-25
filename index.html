@@ -11,44 +11,20 @@
 
 <body>
     <div id="app">
-
         <header class="header">
             <div class="wrap">
+                <search></search>
 
-                <form action="#" class="search-form" @submit.prevent="filter()">
-                    <input type="text" class="search-field" v-model="userSearch">
-                    <!-- Посмотреть что такое v-model -->
-                    <button class="btn-search" type="submit">
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
                 <button class="btn-cart" type="button" @click="show=!show">Корзина</button>
             </div>
         </header>
-        <section id="cart" class="cart" v-show="show">
-            <div class="bascket">
-                <div v-for="product of cartProducts">
+        <cart id="cart" class="cart" v-show="show" :cart="cartProducts">
+        </cart>
 
-                    <h3 class="product_name">{{product.product_name}}</h3>
-                    <p class="product_price">{{product.price}} $</p>
-                    <p> Количество: {{product.quantity}}</p>
-                    <button @click="remove(product)">Х</button>
-                </div>
-                <p v-if="!cartProducts.length" class="totalSum">В корзине пусто</p>
-            </div>
-
-        </section>
         <main>
-            <div class="products">
-                <div :id=product.id_product class="product-item" v-for="product of filtered">
-                    <img :src="imgCatalog" alt="Some img">
-                    <div class="desc">
-                        <h3 class="product_name">{{product.product_name}}</h3>
-                        <p class="product_price">{{product.price}} $</p>
-                        <button class="buy-btn" @click="addProduct(product,product.id_product)">Купить</button>
-                    </div>
-                </div>
-            </div>
+            <error :error='error'></error>
+            <products class="products" :products="filtered" :error='error' @add-product="addProduct">
+            </products>
         </main>
 
 
@@ -57,6 +33,10 @@
         integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/products-companents.js"></script>
+    <script src="js/cart-companents.js"></script>
+    <script src="js/search-companent.js"></script>
+    <script src="js/error-companents.js"></script>
     <script src="js/main.js"></script>
 </body>
 
