@@ -37,16 +37,15 @@ const app = new Vue({
                 })
         },
         addProduct(product) {
+            product.quantity++;
 
-            if (product.quantity == 0) {
-                product.quantity++;
+            if (product.quantity == 1) {
+
                 this.cartProducts.push(product);
-                console.log(this.cartProducts);
+
 
             }
-            else {
-                product.quantity++;
-            }
+
         },
         remove(product) {
             if (product.quantity > 1) {
