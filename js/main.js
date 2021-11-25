@@ -15,6 +15,7 @@ const app = new Vue({
         userSearch: '',
         show: false,
         count: [],
+        obj: [],
         c: 0,
         error: false
     },
@@ -37,13 +38,14 @@ const app = new Vue({
         },
         addProduct(product) {
 
-            if (!this.cartProducts.includes(Object.assign({ quantity: 1 }, product))) {
-                this.cartProducts.push(Object.assign({ quantity: 1 }, product));
+            if (product.quantity == 0) {
+                product.quantity++;
+                this.cartProducts.push(product);
                 console.log(this.cartProducts);
+
             }
             else {
-
-                cartProducts.quantity++;
+                product.quantity++;
             }
         },
         remove(product) {
@@ -59,8 +61,9 @@ const app = new Vue({
         this.getJson(`${API + this.catalogUrl}`)
             .then(data => {
                 for (let el of data) {
-                    this.$data.products.push(el);
-                    this.$data.filtered.push(el);
+
+                    this.$data.products.push(Object.assign({ quantity: 0 }, el));
+                    this.$data.filtered.push(Object.assign({ quantity: 0 }, el));
 
                 }
             });
