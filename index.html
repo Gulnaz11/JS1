@@ -7,14 +7,38 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
+
+
 <body>
-    <header>
-        menu
-        <button class="btn-cart" type="button">Корзина</button>
-    </header>
-    <main>
-        <div class="products"></div>
-    </main>
+    <div id="app">
+        <header class="header">
+            <div class="wrap">
+                <search></search>
+
+                <button class="btn-cart" type="button" @click="show=!show">
+                    Корзина<i class="fas fa-cart-arrow-down"></i>
+                </button>
+            </div>
+        </header>
+        <cart id="cart" class="cart" v-show="show" :cart="cartProducts">
+        </cart>
+
+        <main>
+            <error :error='error'></error>
+            <products class="products" :products="filtered" :error='error' @add-product="addProduct">
+            </products>
+        </main>
+
+
+    </div>
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/products-companents.js"></script>
+    <script src="js/cart-companents.js"></script>
+    <script src="js/search-companent.js"></script>
+    <script src="js/error-companents.js"></script>
     <script src="js/main.js"></script>
 </body>
 
