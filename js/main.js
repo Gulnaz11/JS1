@@ -42,15 +42,12 @@ const app = new Vue({
             if (product.quantity == 1) {
 
                 this.cartProducts.push(product);
-
-
             }
 
         },
         remove(product) {
-            if (product.quantity > 1) {
-                product.quantity--;
-            } else {
+            product.quantity--;
+            if (product.quantity == 0) {
                 this.cartProducts.splice(this.cartProducts.indexOf(product), 1);
             }
         }

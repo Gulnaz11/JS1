@@ -15,7 +15,9 @@
             <div class="wrap">
                 <search></search>
 
-                <button class="btn-cart" type="button" @click="show=!show">Корзина</button>
+                <button class="btn-cart" type="button" @click="show=!show">
+                    Корзина<i class="fas fa-cart-arrow-down"></i>
+                </button>
             </div>
         </header>
         <cart id="cart" class="cart" v-show="show" :cart="cartProducts">
