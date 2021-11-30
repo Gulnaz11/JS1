@@ -1,0 +1,23 @@
+{
+  "name": "js1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "vue.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gulnaz11/JS1.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gulnaz11/JS1/issues"
+  },
+  "homepage": "https://github.com/Gulnaz11/JS1#readme",
+  "dependencies": {
+    "moment": "^2.29.1"
+  }
+}
