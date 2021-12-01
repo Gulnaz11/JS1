@@ -3,7 +3,7 @@
 //console.log(c.func.a(10));
 //console.log(c.func.b(10));
 //
-//const os=require('os');
+//const os=require('os');  //импортируем модуль os
 //console.log(os.type());
 
 //Работа с файлами
@@ -31,3 +31,30 @@
 //Внешние модули
 //const moment=require('moment');
 //console.log(moment().format('MMMM Do YYYY, h:mm:ss a'));
+
+const http= require('http');
+
+//модуль http служит для обработки запросов на стороне сервера
+//Запросы поступают по протоколу http
+//Протокол http работает с методами(GET, POST , PUT,DELETE)
+//GET-ИСПОЛЬЗУЕТСЯ ДЛЯ получения данных от сервера
+//POST- используется для вставки данных на сервере
+//PUT- обновление данных на стороне сервера
+//DELETE- удаление данных
+
+const server=http.createServer((req,res)=>{
+//req-объект, с помощью которого можно получить данные, которые отправил клиент
+//res-объект, с помощью которого можно отправить данные от сервера к клиенту
+   if (req.url=='/'){
+        res.write("WELCOME");
+        res.end();
+   }
+
+});
+
+server.on('connection',socket=>{
+      console.log("Соединение установлено");
+
+});
+
+server.listen('3000');
