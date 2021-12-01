@@ -1,0 +1,58 @@
+  .benefits {
+    background-color: #222224;
+    }
+
+.benefits-wrap {     
+    display: flex;
+    justify-content: space-around;
+    padding: 103px;
+
+    @media (max-width: $tablet-break) {
+        flex-direction: column;
+        padding: 0;
+        padding-bottom: 64px;
+        align-items: center;
+    }
+
+    }
+
+.benefit {
+    width: 360px;
+    text-align: center;
+    gap: 30px;
+    @media (max-width: $tablet-break) {
+      padding-top: 48px;
+    }
+
+    }
+
+.benefit-title {
+    margin-bottom: 16px;
+    margin-top: 28px;
+    font-family: Lato;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19.96px;
+    line-height: 24px;
+    /* identical to box height */ 
+    color: #FBFBFB;
+    }
+
+.benefit-title-sale {
+    margin-top: 19px;
+    }
+
+.benefit-title-sale {
+    margin-top: 25px;
+    }
+    
+.benefit-description {
+    padding-left: 30px;
+    padding-right: 30px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 13.972px;
+    line-height: 17px;
+    text-align: center;
+    color: #FBFBFB;
+    }

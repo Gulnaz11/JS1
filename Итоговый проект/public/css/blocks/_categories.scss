@@ -1,0 +1,90 @@
+.categories-wrap {
+    margin-top: 65px;
+    margin-bottom: 96px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+    @media (max-width: $tablet-break){
+       justify-content: center;
+        }
+    }
+ 
+.categories-item {
+    text-align: center;
+    width: 31.5%;
+    height: 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+    @media (max-width: $tablet-break){
+        width: 236px;
+        height: 167px;
+    }
+
+    @media (max-width: $phone-break){
+        width: 96.2%;
+        height: 247px;
+        }
+    }
+
+.categories-item-women{
+    background-image: url("../img/first_category.jpg");    
+    background-size: cover;
+    }
+
+.categories-item-men{     
+    background-image: url("../img/second_category.jpg");  
+    background-size: cover;  
+    }
+
+.categories-item-kids{
+    background-image: url("../img/third_category.jpg");  
+    background-size: cover;  
+    }
+
+.categories-item-acc {
+    position: relative;
+    width:1140px;
+    height: 180px;
+
+    @media (max-width: $tablet-break){
+     
+        height: 116px;
+    }
+    @media (max-width: $phone-break){
+      width: 96.2%;
+        height: 111px;
+    }
+}
+
+
+.video {
+    position:absolute;
+    z-index: -100;
+    width: 100%;
+    background-color: black;
+    @media (max-width: $tablet-break){
+    
+        height: auto;
+    }
+    @media (max-width: $phone-break){
+    
+        height:inherit;
+    }
+}
+
+.categories-item-white {
+    font-size: 16px;
+    line-height: 19px;
+    color: #fff;
+    }
+
+.categories-item-pink {
+    font-size: 24px;
+    line-height: 29px;
+    color: $pink;
+    }
+    

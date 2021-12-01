@@ -1,0 +1,89 @@
+.intro {
+    background-color: #F1E4E6;
+    margin-top: 70px;
+ }   
+ .cart-block{
+    margin-top: 20px;
+    position: fixed;
+    /* right: 0; */
+    right: 0;
+    background-color: white;
+    /* margin-right: 30%; */
+    padding: 10px;
+    z-index: 1;
+ }
+
+.intro-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background-image: url("../img/men_intro.png");
+    min-height: 764px;
+    background-repeat: no-repeat;
+    background-position: -225px bottom;
+    @media (max-width: 1240px){
+        min-height: 500px;
+        background-size: contain;
+        background-position: -30px bottom;
+    }
+    @media (max-width: $tablet-break){
+        min-height: 368px;
+        background-size: contain;
+        background-position: -30px bottom;
+     
+    }
+
+    @media (max-width: $phone-break) {
+        background-image: none;
+    }
+    }
+
+.intro-title {
+    width: 410px;
+    color: #222;
+    border-left: 15px solid $pink; 
+    padding-left: 15px;
+    margin-right: 50px;
+     @media (max-width: $tablet-break){
+      font-size: 44px;
+      margin-right: 0;
+    }
+    @media (max-width: $phone-break) {
+       margin-left: 40px;
+    }
+}
+
+.intro-title-big {
+    font-weight: 900;
+    font-size: 48px;
+    line-height: 58px;
+    @media (max-width: $phone-break) {
+        font-size: 38px;
+        line-height: 46px;
+    }
+   
+}
+
+.intro-title-small {
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    @media (max-width: $phone-break) {
+        font-size: 20px;
+        line-height: 24px;
+        
+    }
+    }
+
+    .intro-title-pink {
+    color: $pink;
+    }
+
+    .intro-br {
+        height:2px; 
+        visibility:hidden;
+        margin-bottom:-5px;
+        @media (max-width: $phone-break) {
+            margin-bottom:-20px;
+        }
+    }

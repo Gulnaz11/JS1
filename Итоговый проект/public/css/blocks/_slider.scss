@@ -1,0 +1,38 @@
+.slider {
+	background-color: #F7F7F7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	padding-bottom: $shift;
+	
+		&-btn {
+		background-color: rgba(42, 42, 42, 0.15);;
+		padding: 11px 17px;
+		position: absolute;
+        fill: #000;
+        border: none;
+        transition: 0.2s;    
+            &:hover {
+                transform: scale(1.2);
+				color: $pink;
+            }
+
+			&-left {
+				left: 5px;
+			}
+			
+			&-right {
+				right: 5px;
+			}
+	}
+}
+
+.slider-img {
+	@media (max-width: $tablet-break-1) {  
+		width: 466px
+	  }
+	  @media (max-width: $phone-break) {  
+		width: 374px
+	  }
+}

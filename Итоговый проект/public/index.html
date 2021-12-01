@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main page</title>
+    <link rel="stylesheet" href="css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400&display=swap"
+        rel="stylesheet">
+
+
+</head>
+
+<body>
+<div id="app">
+    <header class="header">
+        <div class="wrap header-wrap">
+            <div>
+                <a href="index.html" class="logo-link"><img class="header-tap" src="img/logo.png" alt="logo"></a>
+                <button ><img class="header-tap" src="img/search_icon.svg" alt="search"></button>
+            </div>
+            <div>
+                <button><img class="header-tap" src="img/menu_icon.svg" alt="menu"></button>
+                <a href="registration.html" class='registr-link'><img class="header-tap" src="img/contacts_icon.svg"
+                        alt="registration"></a>
+                <button class='cart-link' @click="showCart = !showCart"><img class="header-tap" src="img/cart_icon.svg" alt="cart"></button>
+            </div>
+        </div>
+
+        <nav class="main-nav main-nav-close">
+            <!--main nav open / main-nav-close-->
+            <div class="main-nav-wrap">
+                <button class="main-nav-close-btn"><img src="img/x.svg" alt="X"></button>
+                <p class="main-nav-title">MENU</p>
+                <p class="main-nav-subtitle">MAN</p>
+                <ul class="main-nav-list">
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Accessories</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Bags</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Denim</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">T-Shirts</a></li>
+                </ul>
+                <p class="main-nav-subtitle">WOMAN</p>
+                <ul class="main-nav-list">
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Accessories</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Bags</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Denim</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">T-Shirts</a></li>
+                </ul>
+                <p class="main-nav-subtitle">KIDS</p>
+                <ul class="main-nav-list">
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Accessories</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Bags</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">Denim</a></li>
+                    <li class="main-nav-item"><a href="#" class="main-nav-link">T-Shirts</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main" >
+        <section class="intro">
+            <cart ref="cart" v-show="showCart"></cart>
+            <div class="wrap ">
+                <div class="intro-wrap">
+                    <h1 class="intro-title">
+                        <span class='intro-title-big'> THE BRAND</span>
+                        <br class="intro-br">
+                        <span class='intro-title-small'> OF LUXERIOUS <span class="intro-title-pink">FASHION</span>
+                        </span>
+                    </h1>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="wrap categories-wrap">
+
+                <div class="categories-item categories-item-women">
+                    <h2> <span class="categories-item-white">30% OFF</span>
+                        <br>
+                        <span class="categories-item-pink"> FOR WOMEN</span>
+                    </h2>
+                </div>
+                <div class="categories-item categories-item-men">
+                    <h2><span class="categories-item-white">HOT DEAL</span>
+                        <br>
+                        <span class="categories-item-pink"> FOR MEN </span>
+                    </h2>
+                </div>
+                <div class="categories-item categories-item-kids">
+                    <h2><span class="categories-item-white">NEW ARRIVALS</span>
+                        <br>
+                        <span class="categories-item-pink"> FOR KIDS</span>
+                    </h2>
+                </div>
+                <div class="categories-item categories-item-acc">
+                    <video class="video" src="video/accesories.mp4" autoplay muted loop
+                        poster="img/accesories_category.jpg" width="1140" height="180"></video>
+                    <h2> <span class="categories-item-white">LUXIROUS & TRENDY</span>
+                        <br>
+                        <span class="categories-item-pink"> ACCESORIES</span>
+                    </h2>
+                </div>
+            </div>
+        </section>
+
+        <section class="products">
+
+            <div  class="wrap products-wrap">
+                <h2 class="products-title">Featured Items</h2>
+                <p class="products-description">Shop for items based on what we featured in this week</p>
+
+                <error ref="error"></error>
+                <products ref="products"></products>
+
+
+                <div class="products-a">
+                    <a class="products-button" href="catalog.html">Browse All Product
+
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="benefits">
+
+            <div class="wrap ">
+                <div class="benefits-wrap">
+                    <div class="benefit">
+                        <img src="img/Delivery_pic.svg" alt="Delivery_picture">
+                        <h3 class="benefit-title">Free Delivery</h3>
+                        <p class="benefit-description">Worldwide delivery on all. Authorit tively morph next-generation
+                            innov
+                            tion with extensive models.</p>
+                    </div>
+                    <div class="benefit">
+                        <img src="img/Sale_pic.svg" alt="Sale_picture">
+                        <h3 class="benefit-title benefit-title-sale">Sales & discounts</h3>
+                        <p class="benefit-description">Worldwide delivery on all. Authorit tively morph next-generation
+                            innov
+                            tion with extensive models.</p>
+                    </div>
+                    <div class="benefit">
+                        <img src="img/Quality_pic.svg" alt="Quality_picture">
+                        <h3 class="benefit-title benefit-title-quality">Quality assurance</h3>
+                        <p class="benefit-description">Worldwide delivery on all. Authorit tively morph next-generation
+                            innov
+                            tion with extensive models.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contactUs">
+            <div class="wrap contactUs-wrap">
+                <figure class="contactUs-review">
+                    <img class="contactUs-review-photo" src="img/photo.png" alt="photo">
+                    <figcaption class="contactUs-review-text">“Vestibulum quis porttitor dui! Quisque viverra nunc mi, a
+                        pulvinar
+                        purus condimentum“</figcaption>
+                </figure>
+
+                <div class="contactUs-form">
+
+                    <h3 class="form-title">SUBSCRIBE<br><span class="form-title-small">FOR OUR NEWLETTER AND
+                            PROMOTION</span></h3>
+                    <form action="#" class="subscribe">
+
+                        <input class="subscribe-field" type="email" minlength="3" maxlength="25"
+                            placeholder="Enter Your Email" required>
+                        <input class="subscribe-btn" type="submit" value="Subscribe">
+                    </form>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+    <footer class="footer">
+        <div class="wrap footer-wrap">
+            <p class="footer-text">© 2021 Brand All Rights Reserved.</p>
+            <div class="footer-icons">
+                <a href="#" class="footer-icon facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-icon"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="footer-icon"><i class="fab fa-pinterest-p"></i></a>
+                <a href="#" class="footer-icon"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/products-companents.js"></script>
+    <script src="js/cart-companents.js"></script>
+    <script src="js/search-companent.js"></script>
+    <script src="js/error-companents.js"></script>
+    <script src="js/main.js"></script>
+</div>
+</body>
+
+</html>
