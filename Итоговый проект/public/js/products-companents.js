@@ -37,7 +37,7 @@ Vue.component('product', {
     <li class="product">
     <div class="product-overlay">
 
-                                <button @click="$parent.$emit('add-product', product)" class="product-card-add">
+                                <button @click="$emit('add-product',product)" class="product-card-add">
                                     <svg class="img-product-cart" width="27" height="25" viewBox="0 0 27 25"
                                         xmlns="http://www.w3.org/2000/svg">
                                         <path

@@ -8,8 +8,16 @@ let change = (cart, req) => {
     return JSON.stringify(cart, null, 4);
 };
 
+let remove=(cart,req)=>{
+    let find = cart.contents.find(el => el.id_product === req.bode.id_product);
+    cart.contents.splice(cart.contents.indexOf(find),1);
+       return JSON.stringify(cart, null, 4);
+
+}
+
 
 module.exports = {
     add,
-    change
+    change,
+    remove
 };
