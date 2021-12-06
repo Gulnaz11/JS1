@@ -1,0 +1,38 @@
+[
+  {
+    "id_product": 11,
+    "product_name": "New",
+    "img_product": "img/product_men.png",
+    "price": 7500
+  },
+  {
+    "id_product": 12,
+    "product_name": "New2",
+    "img_product": "img/product_pic2.jpg",
+    "price": 12800
+  },
+  {
+      "id_product": 13,
+      "product_name": "New3",
+      "img_product": "img/product_pic3.jpg",
+      "price": 5380
+    },
+    {
+      "id_product": 14,
+      "product_name": "New4",
+      "img_product": "img/product_pic4.jpg",
+      "price": 10100
+    },
+    {
+      "id_product": 15,
+      "product_name": "New5",
+      "img_product": "img/product_pic5.jpg",
+      "price": 6000
+    },
+    {
+      "id_product": 16,
+      "product_name": "New6",
+      "img_product": "img/product_pic6.jpg",
+      "price": 37000
+    }
+]

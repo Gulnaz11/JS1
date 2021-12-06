@@ -1,0 +1,94 @@
+.about-wrap {
+    background-color: #fff;
+	 border: 1px solid #EAEAEA;
+	margin-top: - $shift;
+	position: relative; /* чтобы блок был над, а не под */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 65px;
+
+}
+
+.about {
+
+    margin-bottom: 128px;
+    &-h3 {
+        
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        color: #F16D7F;
+    
+
+        &::after {
+            content: "";
+            display: flex;
+            border-top: 3px solid $pink;
+            width: 65px;
+            margin-left: 35px;
+            margin-top: 12px;
+        }
+    }
+
+    &-h2 {
+        padding-top: 10px;
+        padding-bottom: 48px;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        color: #4D4D4D;
+    }
+
+    &-p {
+
+        font-weight: 300;
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        color: #5E5E5E;
+        width: 555px;
+        @media (max-width: $tablet-break) {  
+            width: 326px;
+          }
+    }
+
+    &-price {
+        padding-bottom: 130px;
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        color: #EF5B70;
+        padding: 32px 287px;
+        border-bottom: 1px solid #EAEAEA;
+    }
+
+}
+.about-filter {
+    margin-bottom: 48px;
+    margin-top: 40px;
+}
+
+
+.img-cart {
+    fill: $pink;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+.button-cart {
+    padding-right: 55px;
+    transition: 0.3s;
+    &:hover {
+        transform: scale(1.2);
+    }
+    &:hover .img-cart {
+    fill: #fff;
+    transform: rotate(360deg);
+    }
+}
+
+.prod {
+    margin-bottom: 48px;
+}

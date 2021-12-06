@@ -1,0 +1,47 @@
+.arrivals {
+    background-color:#F8F3F4;
+    }
+
+.arrivals-wrap {
+    height: 148px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: $phone-break){
+    flex-direction: column;
+    padding-bottom: 40px;
+    padding-top: 24px;
+    }
+    }
+
+.arrivals-title {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 29px;
+    color: $pink;
+    }
+
+  
+.breadcrumb-item{
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 17px;
+
+}
+
+.breadcrumb-link {
+    text-decoration: none;
+    color: #636363;
+    }
+
+.breadcrumb-link:hover {
+    color: $pink;
+    transform: scale(1.2);
+    }
+
+.breadcrumb-item-active {
+    color: $pink; 
+    font-weight: bold;
+    }
