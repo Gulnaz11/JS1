@@ -1,0 +1,128 @@
+
+.regisrtation-wrap {
+    display: flex;
+    margin-top: 65px;
+    margin-bottom: 95px;
+    @media (max-width: $phone-break) {  
+		display: block;
+	  }
+}
+
+.registration-forms {
+    margin-right: 128px;
+    @media (max-width: $phone-break) {  
+	margin-bottom: 40px;
+	  }
+}
+
+
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+
+    &-title {
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: #222222;
+    }
+
+    &-input {
+       margin-top: 20px;
+       padding: 10px;
+       width: 360px;
+
+       &::placeholder {
+        font-weight: 300;
+        font-size: 13px;
+        line-height: 16px;
+        color: #B1B1B1;
+       }
+    }
+}
+
+.registration-radio {
+    font-weight: 300;
+    font-size: 11px;
+    line-height: 13px;
+    color: #000000;  
+    margin-top: 33px;  
+    margin-bottom: 33px;
+
+    &-gender {
+        margin-right: 20px;
+    }
+
+}
+
+.registration-form-text {
+    max-width: 360px;
+    margin-top: 15px;
+    font-weight: 300;
+    font-size: 13px;
+    line-height: 16px;
+    color: #B1B1B1;    
+}
+
+.registration-form-btn {
+    width: 167px;
+    margin-top: 20px;
+    background-color: #F26376;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 14px;
+    line-height: 17px;  
+    color: #FFFFFF;    
+    padding: 15px 30px;
+    border: none;
+    &:hover {
+       color: #fff;
+       transform: scale(1.1);
+    }  
+
+    &:hover .arrow-registration{
+        -webkit-animation: jello-horizontal 0.9s both;
+	        animation: jello-horizontal 0.9s both;
+    }
+}
+
+
+.arrow-registration {
+    margin-left: 15px;
+}
+
+
+.loyalty {
+
+    font-weight: 300;
+    font-size: 24px;
+    line-height: 29px;
+    color: #000000;   
+    
+    &-title {
+        font-weight: 300;
+        font-size: 24px;
+        line-height: 29px;
+        margin-bottom: 22px;
+    }
+
+    &-text {
+        margin-bottom: 20px;
+    }
+
+    &-list {
+        list-style: none;
+         padding: 0;
+        &-item {
+            display: flex;
+            gap: 20px;
+           
+        }
+    }
+    @media (max-width: $tablet-break) {  
+		font-size:  16px;
+        line-height: 19px;
+	  }
+}

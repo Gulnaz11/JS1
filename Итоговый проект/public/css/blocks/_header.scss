@@ -1,0 +1,118 @@
+.header-wrap {
+    display: flex;
+    justify-content: space-between;
+    }
+
+.header {
+    background-color: #222222;
+    color: #fff;
+    padding: 18px 0;
+  position: fixed;
+      width: 100%;
+      z-index: 1;
+    }
+
+.header-tap:hover
+{
+    transform: scale(1.15);
+}
+
+.header button {
+    background-color:transparent;
+    border: none
+}
+
+/* навигация*/
+
+
+.main-nav-close {
+    display: none;
+}
+
+.main-nav-open {
+    display: block;
+}
+
+.main-nav {
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 100%;
+    width: 230px;
+    padding: 35px;
+    background-color: #fff;
+    height: 764px;
+    box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+}
+
+.main-nav-wrap {
+    width: 100%;
+    position: relative;
+}
+
+.main-nav-close-btn {
+    position: absolute;
+    right: -15px;
+    top: -15px;
+    transition: 0.4s;
+    &:hover {
+        transform: rotate(50deg);
+    }
+}
+
+.main-nav-title{
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 17px;
+    color: #000000;
+    margin-bottom: 24px;
+}
+
+.main-nav-subtitle {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #F16D7F;    
+    margin-bottom: 12px;
+}
+
+.main-nav-list {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.main-nav-item {
+    margin-bottom: 11px;
+}
+
+.main-nav-link {
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 17px;
+    color: #6F6E6E;
+    text-decoration: none;
+    &:hover {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+.logo-link {
+    margin-right: 40px;
+    }
+
+
+.registr-link {
+    margin-left: 33px;
+    @media (max-width: $phone-break) {
+        display: none;
+    }
+}
+
+.cart-link {
+    margin-left: 33px;
+    @media (max-width: $phone-break) {
+        display: none;
+        padding-right: 5px;
+    }
+    }
