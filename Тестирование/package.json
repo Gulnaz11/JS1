@@ -1,0 +1,15 @@
+{
+  "name": "no",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "jasmine": "^3.10.0",
+    "jasmine-core": "^3.10.1"
+  }
+}
